@@ -1,0 +1,107 @@
+* {
+    margin: 0px;
+}
+form {
+    width: 100%;
+    padding: 30px;
+    border: 3px solid gray;
+    background-color: lightgray;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.title {
+    font-size: 1.6em;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+.interest-select-container {
+    height: 30px;
+    border: darkblue solid 3px;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+.interest-select-containers {
+    margin: 5px;
+    padding: 20px;
+    border: 3px solid darkcyan;
+    border-radius: 5px;
+}
+.interest-select-checkbox:hover + .interest-select-text {
+    background-color: cadetblue;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.interest-select-checkbox:checked + .interest-select-text {
+    color: white;
+    background-color: royalblue;
+}
+
+.lecture-items-container {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    width: 1004px;
+    border: 2px solid darkblue;
+}
+
+.lecture-item {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    width: 250px;
+    height: 250px;
+    border: 2px solid black;
+    justify-content: center;
+    align-items: center;
+}
+.lecture-item-image {
+    width: 140px;
+    height: 140px;
+}
+
+.lecture-item:hover > .lecture-item-image[id="size-increase"] {
+    width: 250px;
+    height: 250px;
+    transition: all 2s;
+
+}
+.lecture-item:hover > .lecture-item-image[id="spin"] {
+    transition: all 1s;
+    transform: rotate(360deg);
+
+}
+
+@keyframes mv {
+    from {
+        background-color: rebeccapurple;
+        margin-left: 640px;
+    }
+    to {
+        background-color: royalblue ;
+        margin-left: 0px;
+    }
+}
+.main-title-container {
+    display: flex;
+    width: 1004px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 2px darkblue solid;
+}
+.main-title-container:hover > .main-title {
+    animation-name: mv;
+    animation-duration: 2s;
+}
+
+.lecture-title {
+    width: 1004px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px darkcyan solid;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+}
