@@ -1,0 +1,202 @@
+* {
+    margin: 0px;
+}
+form {
+    width: 100%;
+    padding: 30px;
+    border: 3px solid gray;
+    background-color: lightgray;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.title {
+    font-size: 1.6em;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+.interest-select-container {
+    height: 30px;
+    border: darkblue solid 3px;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+.interest-select-containers {
+    margin: 5px;
+    padding: 20px;
+    border: 3px solid darkcyan;
+    border-radius: 5px;
+}
+.interest-select-checkbox:hover + .interest-select-text {
+    background-color: cadetblue;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.interest-select-checkbox:checked + .interest-select-text {
+    color: white;
+    background-color: royalblue;
+}
+
+.lecture-item {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    width: 240px;
+    height: 240px;
+    border: 2px solid black;
+    justify-content: center;
+    align-items: center;
+}
+.lecture-item-image {
+    width: 140px;
+    height: 140px;
+}
+
+/* .lecture-item:hover > .lecture-item-image[id="size-increase"] {
+    width: 250px;
+    height: 250px;
+    transition: all 2s;
+} */
+
+/* .lecture-item:hover > .lecture-item-image[id="spin"] {
+    transition: all 1s;
+    transform: rotate(360deg);
+
+} */
+
+/* @keyframes mv {
+    from {
+        background-color: rebeccapurple;
+        margin-left: 640px;
+    }
+    to {
+        background-color: royalblue ;
+        margin-left: 0px;
+    }
+} */
+.main-title-container {
+    display: flex;
+    width: 500px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 2px darkblue solid;
+}
+/* .main-title-container:hover > .main-title {
+    animation-name: mv;
+    animation-duration: 2s;
+} */
+
+.lecture-title {
+    width: 500px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px darkcyan solid;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+}
+
+/**
+LAB4 !!
+*/
+
+/* 1. navigation을 flex-container로 구성하기 */
+nav > div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    background-color: aliceblue;
+}
+
+/* 2. 메인 컨텐츠 flex-container 중첩하기*/
+.lecture-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.lecture-title-container {
+    display: flex;
+}
+
+.lecture-items-container {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    border: 2px solid darkblue;
+
+    height: 400px;
+    overflow: scroll;
+}
+
+.lecture-description-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 3. 미디어 쿼리를 사용하여 스크린 너비에 따라 네비게이션 및 메인 컨텐츠 layout 변경하기*/
+@media screen and (max-width: 480px) {
+    /* 네비게이션 변화 */
+    nav > div {
+        width: 240px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* 메인컨텐츠 변화 */
+    .lecture-title-container, .lecture-items-container, .lecture-description-container {
+        width: 252px;
+    }
+    .lecture-description-container > p {
+        font-size: medium;
+    }
+}
+@media screen and (min-width: 481px) and (max-width: 800px) {
+    /* 네비게이션 변화 */
+    nav > div {
+        width: 480px;
+    }
+
+    /* 메인컨텐츠 변화 */
+    .lecture-title-container, .lecture-items-container, .lecture-description-container {
+        width: 504px;
+    }
+    .lecture-description-container > p {
+        font-size: larger;
+    }
+}
+@media screen and (min-width: 801px) {
+    /* 네비게이션 변화 */
+    nav > div {
+        width: 800px;
+    }
+
+    /* 메인컨텐츠 변화 */
+    .lecture-title-container, .lecture-items-container, .lecture-description-container {
+        width: 756px;
+    }
+    .lecture-description-container > p {
+        font-size: xx-large;
+    }
+}
+
+.lecture-item-detail-name {
+    opacity: 0;
+}
+
+.lecture-item-detail-description {
+    opacity: 0;
+}
+
+.lecture-item-detail-price {
+    opacity: 0;
+}
+
+.lecture-search > * {
+    width: 300px; 
+    margin: 10px 0px 10px 20px;
+}
