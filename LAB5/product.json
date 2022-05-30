@@ -1,0 +1,125 @@
+{
+    "items": 
+    [
+        {
+            "id": 0,
+            "name": "Java",
+            "description": "WORA의 특징을 가진 java는...",
+            "price": 12000,
+            "category": "PL",
+            "image": "Lecture_images/Lecture_Java.png"
+        },
+        {
+            "id": 1,
+            "name": "C",
+            "description": "C는 컴퓨터 구조를 공부하기에...",
+            "price": 13000,
+            "category": "PL",
+            "image": "Lecture_images/Lecture_C.png"
+        },
+        {
+            "id": 2,
+            "name": "Javascript",
+            "description": "JavaScript는 웹, 앱 등등 통용...",
+            "price": 9000,
+            "category": "PL",
+            "image": "Lecture_images/Lecture_Javascript.png"
+        },
+        {
+            "id": 3,
+            "name": "Go",
+            "description": "Go는 구글에서 비교적 최근에 나온...",
+            "price": 19900,
+            "category": "PL",
+            "image": "Lecture_images/Lecture_Go.png"
+        },
+        {
+            "id": 4,
+            "name": "Python",
+            "description": "파이썬은 초보자들이 처음 익히기...",
+            "price": 8900,
+            "category": "PL",
+            "image": "Lecture_images/Lecture_Python.png"
+        },
+        {
+            "id": 5,
+            "name": "Rust",
+            "description": "Rust는 쉽고 빠르다는 장점이...",
+            "price": 12000,
+            "category": "PL",
+            "image": "Lecture_images/Lecture_Rust.png"
+        },
+        {
+            "id": 6,
+            "name": "SPA",
+            "description": "SPA의 대표적인 framework로는...",
+            "price": 50000,
+            "category": "FR",
+            "image": "Lecture_images/Lecture_SPA.png"
+        },
+        {
+            "id": 7,
+            "name": "koa",
+            "description": "koa는 node를 기반으로 한...",
+            "price": 16000,
+            "category": "FR",
+            "image": "Lecture_images/Lecture_koa.png"
+        },
+        {
+            "id": 8,
+            "name": "nest",
+            "description": "nest 대표적인 서버 framwork 중...",
+            "price": 44000,
+            "category": "FR",
+            "image": "Lecture_images/Lecture_nest.png"
+        },
+        {
+            "id": 9,
+            "name": "Loopback",
+            "description": "Loopback에 대해 배워봅시다.",
+            "price": 33000,
+            "category": "FR",
+            "image": "Lecture_images/Lecture_loopback.png"
+        },
+        {
+            "id": 10,
+            "name": "Hapi",
+            "description": "Hapi는 node를 기반으로 한...",
+            "price": 23000,
+            "category": "FR",
+            "image": "Lecture_images/Lecture_hapi.png"
+        },
+        {
+            "id": 11,
+            "name": "Docker Kubernetes",
+            "description": "Docker와 쿠버네티스는...",
+            "price": 70000,
+            "category": "TC",
+            "image": "Lecture_images/Lecture_Docker_Kubernetes.png"
+        },
+        {
+            "id": 12,
+            "name": "EC2",
+            "description": "AWS의 대표적인 제품 중...",
+            "price": 3000,
+            "category": "TC",
+            "image": "Lecture_images/Lecture_EC2.png"
+        },
+        {
+            "id": 13,
+            "name": "ELB",
+            "description": "ELB는 갑작스러운 서버...",
+            "price": 3000,
+            "category": "TC",
+            "image": "Lecture_images/Lecture_ELB.png"
+        },
+        {
+            "id": 14,
+            "name": "RDS",
+            "description": "RDS는 AWS에서 관리하는...",
+            "price": 4000,
+            "category": "TC",
+            "image": "Lecture_images/Lecture_RDS.png"
+        }
+    ]
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./main.css" />
+        <title>
+            인터넷 프로그래밍 과제 5
+        </title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+
+        <header>
+            <div class="main-title-container">
+                <h2 class="main-title">코딩 서당에 오신 것을 환영합니다</h2>
+            </div>
+        </header>
+        <nav>
+            <div>
+                <a href="./index.html">메인화면</a>
+                <a href="./login.html">로그인</a>
+                <a href="./signup.html">회원가입</a>
+            </div>
+        </nav>
+        <div class="lecture-container">
+            <div class="lecture-title-container">
+                <p class="lecture-title">프로그래밍 강의 모음</p>
+            </div>
+            <div class="lecture-search">
+                <input type="text" id="lecture-items-search">
+                <br>
+                <select class="lecture-search-select">
+                    <option value="AL">전부</option>
+                    <option value="PL">프로그래밍 언어</option>
+                    <option value="FR">프레임워크</option>
+                    <option value="TC">기술</option>
+                </select>
+                <br>
+                <button onclick=search()>눌러</button>
+            </div>
+            <script type="text/javascript">
+
+            </script>
+        <div>
+            <div class="lecture-items-container">
+                
+            </div>
+        </div>
+        <div class="lecture-description-container">
+            <p>코딩 서당 소개</p>
+            <p>Contact: xxx-xxxx-xxxx</p>
+            <p>Email: LABExample@yonsei.ac.kr</p>
+            <p>Location: xx도 xx시 xx구 xx로 xxx xxx동-xxx호</p>
+        </div>
+        <script>
+            let search_text = "";
+            let search_type = "AL";
+            let last_id = -1;
+            let isWorking = false;
+            async function search() {
+                last_id = -1
+                search_text = document.getElementById("lecture-items-search").value
+                select_type = document.getElementsByClassName("lecture-search-select")[0].value
+
+                document.getElementById("lecture-items-search").value = ""
+                document.getElementsByClassName("lecture-items-container")[0].innerHTML = ""
+                if (!isWorking) {
+                    isWorking = true;
+                    load_data()
+                }
+            }
+
+            async function load_data() {
+                console.log("실행")
+                let counter = 0
+                const json_data =
+                    await fetch("product.json")
+                    .then(res =>res.json())
+                json_data.items.forEach(element => {
+                    if (counter >= 6) {
+                        return;
+                    }
+                    if ((search_text == "" || element.name.toLowerCase().includes(search_text.toLowerCase())) && (select_type == "AL" || element.category == select_type) && element.id > last_id) {
+                        const div = document.createElement("div")
+                        div.className = "lecture-item"
+                        div.innerHTML = `
+                            <div class="lecture-item" onclick=show("item-${element.id}")>
+                                <img class="lecture-item-image" src=${element.image} />
+                                <div class="lecture-item-detail">
+                                    <p class="lecture-item-detail-name" name="item-${element.id}">Lecture Name: ${element.name}</p>
+                                    <p class="lecture-item-detail-description" name="item-${element.id}">Description: ${element.description}</p>
+                                    <p class="lecture-item-detail-price" name="item-${element.id}">Price: ${element.price}</p>
+                                </div>
+                            </div>
+                            `
+                        counter += 1
+                        last_id = element.id
+                        document.getElementsByClassName("lecture-items-container")[0].appendChild(div)
+                    }
+                });
+                isWorking = false
+            }
+
+            function show(element_name) {
+                for (let i = 0; i < 3; i++) {
+                    console.log(1)
+                    document.getElementsByName(element_name)[i].style.opacity = 1
+                }
+            }
+            const items_container = document.getElementsByClassName("lecture-items-container")[0]
+            items_container.addEventListener('scroll', () => {
+                if (items_container.scrollTop + items_container.clientHeight + 20 + 1>= items_container.scrollHeight && !isWorking) {
+                    isWorking = true
+                    setTimeout(async () => {
+                        load_data()
+                    }, 500)
+                }
+            });
+            search("")
+
+        </script>
+    </body>
+
+</html>
